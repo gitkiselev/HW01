@@ -1,7 +1,7 @@
 let employers = ['Alex', '', 'ludmila', 'Viktor', '', 'oleg', 'iNna', 'Ivan', 'Alex', 'Olga', ' Ann'];
 
-let employersNames = [];
-employersNames = employers.filter(emp => emp.length > 0).map(emp => emp.toLowerCase().trim())
+
+let employersNames = employers.filter(emp => emp.length > 0).map(emp => emp.toLowerCase().trim())
 
 
 const sponsors = {
@@ -21,7 +21,7 @@ const calcCash = (own, everyCash) => {
 
 let money = calcCash(null, cash);
 
-function makeBusiness(owner,  director = 'Victor', money, employersNames) {
+let makeBusiness = (owner,  director = 'Victor', money, employersNames) => {
     const {eu, rus} = sponsors;
     //const sumSponsors = sponsors.eu.concat(sponsors.rus, 'unexpected sponsor');
     sumSponsors = [...eu, ...rus, 'unexpected sponsor'];
