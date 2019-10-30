@@ -15,7 +15,7 @@ const calcCash = (own, everyCash) => {
     if((isNaN(own) || own == '' || own == null)){
         own = 0;
     }
-    let total = everyCash.reduce((accumulator, currentValue) => accumulator + currentValue, own);
+    let total = everyCash.reduce((a, b) => a + b);
     return total;
 }
 
