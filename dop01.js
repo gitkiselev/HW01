@@ -1,32 +1,34 @@
 let images = [
     'https://andrei-kiselev.ru/img/react/01.jpg',
     'https://andrei-kiselev.ru/img/react/02.jpg',
-    'https://andrei-kiselev.ru/img/react/03.jpg'
+    'https://andrei-kiselev.ru/img/react/0f3.jpg'
 ]
+let loaded = [];
 
-// const array1 = ['a', 'b', 'c'];
-
-// for (const image of images) {
-  
-// }
 loadImage = (url) => {
     return new Promise((resolve, reject) => {
         const image = document.createElement('img');
         image.src = url;
         image.addEventListener('load', resolve);
         image.addEventListener('error', reject);
-        return image;
-        //document.body.appendChild(image);
+        loaded.push(image);
 ;    });
 }
-images.map(img => {
-    document.body.appendChild(loadImage(img));
-    //loadImage(img)
-});
 
 
-let promise1 = loadImage(images[0]);
-let promise2 = loadImage(images[1]);
-let promise3 = loadImage(images[2]);
+loadImage(images[0])
+.then(() => loadImage(images[1]))
+.then(() => loadImage(images[2]))
+.then(() => {
+        loaded.map((img, idx) => {
+            document.body.appendChild(img);
+        });
+    })
+    .catch((err) => {
+        console.error('unloaded image path ',  err);
+    })
+
+
+
 
 
