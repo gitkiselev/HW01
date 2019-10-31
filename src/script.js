@@ -69,13 +69,4 @@ function () {
 }();
 
 var make = new Make();
-make.sumSponsors.apply(make, ['Sam', null, _money.money, _emp.employersNames]); // let makeBusiness = (owner,  director = 'Victor', money, employersNames) => {
-//     const {eu, rus} = sponsors;
-//     const sumSponsors = [...eu, ...rus, 'unexpected sponsor'];
-//     console.log(`We have a business. Owner: ${owner} , director: ${director}. Our budget: ${money}. And our employers:
-//      ${employersNames}`);
-//     console.log('And we have a sponsors: ');
-//     console.log(...sumSponsors);
-//     console.log('Note. Be careful with ' + sponsors.eu[0] + ". It's a huge risk.");
-// }
-// makeBusiness(...['Sam', null, money, employersNames]);
+make.sumSponsors.apply(make, ['Sam', null, _money.money, _emp.employersNames]);

@@ -1,8 +1,8 @@
 module.exports = {
   mode: 'production',
-  entry: './babeled/money.js',
+  entry: './src/script.js',
   output: {
-    filename: 'script.js',
+    filename: 'bundle.js',
     path: __dirname + '/dist/'
   },
   watch: false,
