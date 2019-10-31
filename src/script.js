@@ -56,7 +56,7 @@ function () {
       var eu = _money.sponsors.eu,
           rus = _money.sponsors.rus;
       var sumSponsors = [].concat(_toConsumableArray(eu), _toConsumableArray(rus), ['unexpected sponsor']);
-      console.log("We have a business. Owner: ".concat(owner, " , director: ").concat(director, ". Our budget: ").concat(_money.money, ". And our employers:\n        ").concat(_emp.employersNames));
+      console.log("We have a business. Owner: ".concat(this.owner, " , director: ").concat(this.director, ". Our budget: ").concat(this.money, ". And our employers:\n        ").concat(this.employersNames));
       console.log('And we have a sponsors: ');
 
       (_console = console).log.apply(_console, _toConsumableArray(sumSponsors));
