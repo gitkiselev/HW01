@@ -23,9 +23,8 @@ let money = calcCash(null, cash);
 
 let makeBusiness = (owner,  director = 'Victor', money, employersNames) => {
     const {eu, rus} = sponsors;
-    //const sumSponsors = sponsors.eu.concat(sponsors.rus, 'unexpected sponsor');
-    sumSponsors = [...eu, ...rus, 'unexpected sponsor'];
-    console.log(`We have a business. Owner:   ${owner} , director: ${director}. Our budget:  ${money}. And our employers:
+    const sumSponsors = [...eu, ...rus, 'unexpected sponsor'];
+    console.log(`We have a business. Owner: ${owner} , director: ${director}. Our budget: ${money}. And our employers:
      ${employersNames}`);
     console.log('And we have a sponsors: ');
     console.log(...sumSponsors);
