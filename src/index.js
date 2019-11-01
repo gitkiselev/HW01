@@ -14,9 +14,9 @@ require("core-js/modules/es6.symbol");
 
 require("core-js/modules/web.dom.iterable");
 
-var _emp = require("./emp");
+var _employers = require("./employers");
 
-var _money = require("./money");
+var _sponsors2 = require("./sponsors");
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
@@ -32,41 +32,38 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Make =
+var MakeBusiness =
 /*#__PURE__*/
 function () {
-  function Make(owner) {
-    var director = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'Victor';
-    var money = arguments.length > 2 ? arguments[2] : undefined;
-    var employersNames = arguments.length > 3 ? arguments[3] : undefined;
-
-    _classCallCheck(this, Make);
+  function MakeBusiness(owner, director, money, employersNames) {
+    _classCallCheck(this, MakeBusiness);
 
     this.owner = owner;
-    this.director = director;
+    this.director = director || 'Victor';
     this.money = money;
     this.employersNames = employersNames;
   }
 
-  _createClass(Make, [{
+  _createClass(MakeBusiness, [{
     key: "sumSponsors",
     value: function sumSponsors() {
       var _console;
 
-      var eu = _money.sponsors.eu,
-          rus = _money.sponsors.rus;
+      var _sponsors = sponsors,
+          eu = _sponsors.eu,
+          rus = _sponsors.rus;
       var sumSponsors = [].concat(_toConsumableArray(eu), _toConsumableArray(rus), ['unexpected sponsor']);
-      console.log("We have a business. Owner: ".concat(this.owner, " , director: ").concat(this.director, ". Our budget: ").concat(this.money, ". And our employers:\n        ").concat(this.employersNames));
+      console.log("We have a business. Owner: ".concat(this.owner, " , director: ").concat(this.director, ". Our budget: ").concat(this.money, ". And our employers:\n    ").concat(this.employersNames));
       console.log('And we have a sponsors: ');
 
       (_console = console).log.apply(_console, _toConsumableArray(sumSponsors));
 
-      console.log('Note. Be careful with ' + _money.sponsors.eu[0] + ". It's a huge risk.");
+      console.log('Note. Be careful with ' + sponsors.eu[0] + ". It's a huge risk.");
     }
   }]);
 
-  return Make;
+  return MakeBusiness;
 }();
 
-var make = new Make();
-make.sumSponsors.apply(make, ['Sam', null, _money.money, _emp.employersNames]);
+var make = new MakeBusiness();
+make.sumSponsors.apply(make, ['Sam', null, _sponsors2.money, _employers.employersNames]);
