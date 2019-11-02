@@ -90,23 +90,18 @@
 /*!********************************!*\
   !*** ./src/employers/index.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.employersNames = void 0;
+__webpack_require__.r(__webpack_exports__);
 var employers = ['Alex', '', 'ludmila', 'Viktor', '', 'oleg', 'iNna', 'Ivan', 'Alex', 'Olga', ' Ann'];
 var employersNames = employers.filter(function (emp) {
   return emp.length > 0;
 }).map(function (emp) {
   return emp.toLowerCase().trim();
 });
-exports.employersNames = employersNames;
+/* harmony default export */ __webpack_exports__["default"] = (employersNames);
 
 /***/ }),
 
@@ -114,131 +109,61 @@ exports.employersNames = employersNames;
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _employers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./employers */ "./src/employers/index.js");
+/* harmony import */ var _sponsors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sponsors */ "./src/sponsors/index.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 
-var _employers = __webpack_require__(/*! ./employers */ "./src/employers/index.js");
 
-var _sponsors = __webpack_require__(/*! ./sponsors */ "./src/sponsors/index.js");
 
-function isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-
-  try {
-    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-function _construct(Parent, args, Class) {
-  if (isNativeReflectConstruct()) {
-    _construct = Reflect.construct;
-  } else {
-    _construct = function _construct(Parent, args, Class) {
-      var a = [null];
-      a.push.apply(a, args);
-      var Constructor = Function.bind.apply(Parent, a);
-      var instance = new Constructor();
-      if (Class) _setPrototypeOf(instance, Class.prototype);
-      return instance;
-    };
-  }
-
-  return _construct.apply(null, arguments);
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
-}
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
-}
-
-function _iterableToArray(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
-      arr2[i] = arr[i];
-    }
-
-    return arr2;
-  }
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-var MakeBusiness =
+var Business =
 /*#__PURE__*/
 function () {
-  function MakeBusiness(owner) {
+  function Business(owner) {
     var director = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'Victor';
-    var money = arguments.length > 2 ? arguments[2] : undefined;
-    var employersNames = arguments.length > 3 ? arguments[3] : undefined;
+    var cash = arguments.length > 2 ? arguments[2] : undefined;
+    var emp = arguments.length > 3 ? arguments[3] : undefined;
 
-    _classCallCheck(this, MakeBusiness);
+    _classCallCheck(this, Business);
 
     this.owner = owner;
     this.director = director;
-    this.money = money;
-    this.employersNames = employersNames;
+    this.cash = cash;
+    this.emp = emp;
   }
 
-  _createClass(MakeBusiness, [{
+  _createClass(Business, [{
     key: "showInfo",
     value: function showInfo() {
       console.log("We have a business. Owner: ".concat(this.owner, ", director: ").concat(this.director, ". Our budget: ").concat(this.cash, ". And our employers: ").concat(this.emp));
       console.log('And we have sponsors: ');
-      console.log([].concat(_toConsumableArray(_sponsors.eu), _toConsumableArray(_sponsors.rus), ['unexpected sponsor']).join(', '));
-      console.log("Note. Be careful with ".concat(_sponsors.srl, ". It's a huge risk."));
+      console.log([].concat(_toConsumableArray(_sponsors__WEBPACK_IMPORTED_MODULE_1__["eu"]), _toConsumableArray(_sponsors__WEBPACK_IMPORTED_MODULE_1__["rus"]), ['unexpected sponsor']).join(', '));
+      console.log("Note. Be careful with ".concat(_sponsors__WEBPACK_IMPORTED_MODULE_1__["srl"], ". It's a huge risk."));
     }
   }]);
 
-  return MakeBusiness;
+  return Business;
 }();
 
-var make = _construct(MakeBusiness, ['Sam', null, _sponsors.money, _employers.employersNames]);
-
-make.showInfo();
+var business = new Business('Sam', undefined, _sponsors__WEBPACK_IMPORTED_MODULE_1__["money"], _employers__WEBPACK_IMPORTED_MODULE_0__["default"]);
+business.showInfo();
 
 /***/ }),
 
@@ -246,58 +171,22 @@ make.showInfo();
 /*!*******************************!*\
   !*** ./src/sponsors/index.js ***!
   \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: srl, rus, eu, money */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "srl", function() { return srl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rus", function() { return rus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eu", function() { return eu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "money", function() { return money; });
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.money = exports.eu = exports.rus = exports.srl = void 0;
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
-}
-
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance");
-}
-
-function _iterableToArrayLimit(arr, i) {
-  if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
-    return;
-  }
-
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-  var _e = undefined;
-
-  try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var sponsors = {
   cash: [40000, 5000, 30400, 12000],
@@ -305,29 +194,27 @@ var sponsors = {
   rus: ['RusAuto', 'SBO']
 };
 
+function calcCash() {
+  var own = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+  var _ref = Array.prototype.slice.call(arguments),
+      cash = _ref[1];
+
+  var total = own;
+  cash.forEach(function (item) {
+    return total += item;
+  });
+  return total;
+}
+
 var cash = sponsors.cash,
     _sponsors$eu = _slicedToArray(sponsors.eu, 1),
     srl = _sponsors$eu[0],
     rus = sponsors.rus;
 
-exports.rus = rus;
-exports.srl = srl;
 var eu = sponsors.eu;
-exports.eu = eu;
+var money = calcCash(undefined, cash);
 
-var calcCash = function calcCash(own, everyCash) {
-  if (isNaN(own) || own == '' || own == null) {
-    own = 0;
-  }
-
-  var total = everyCash.reduce(function (a, b) {
-    return a + b;
-  });
-  return total;
-};
-
-var money = calcCash(null, cash);
-exports.money = money;
 
 /***/ })
 

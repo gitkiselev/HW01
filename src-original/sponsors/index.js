@@ -3,18 +3,16 @@ const sponsors = {
   eu: ['SRL', 'PLO', 'J&K'],
   rus: ['RusAuto', 'SBO']
 };
-
-function calcCash(own = 0) {
-  const [, cash] = [...arguments];
-  let total = own;
-
-  cash.forEach(item => total += item);
+const {cash, eu: [srl], rus} = sponsors;
+const {eu} = sponsors;
+const calcCash = (own, everyCash) => {
+  if((isNaN(own) || own == '' || own == null)){
+      own = 0;
+  }
+  let total = everyCash.reduce((a, b) => a + b);
   return total;
 }
 
-const {cash, eu: [srl], rus} = sponsors;
-const {eu} = sponsors;
-
-const money = calcCash(undefined, cash);
+let money = calcCash(null, cash);
 
 export {srl, rus, eu, money};
