@@ -1,6 +1,7 @@
-let employers = ['Alex', '', 'ludmila', 'Viktor', '', 'oleg', 'iNna', 'Ivan', 'Alex', 'Olga', ' Ann'];
+const index = ['Alex', '', 'ludmila', 'Viktor', '', 'oleg', 'iNna', 'Ivan', 'Alex', 'Olga', ' Ann'];
 
+let employersNames = [...index.filter(item => item.length > 0)];
 
-let employersNames = employers.filter(emp => emp.length > 0).map(emp => emp.toLowerCase().trim())
+employersNames = employersNames.map(item => item.toLowerCase().trim());
 
 export default employersNames;
