@@ -1,22 +1,14 @@
 "use strict";
 
-require("core-js/modules/es6.string.iterator");
-
-require("core-js/modules/es6.array.from");
-
-require("core-js/modules/es6.regexp.to-string");
-
-require("core-js/modules/es6.object.to-string");
-
-require("core-js/modules/es7.symbol.async-iterator");
-
-require("core-js/modules/es6.symbol");
-
-require("core-js/modules/web.dom.iterable");
-
 var _employers = require("./employers");
 
-var _sponsors2 = require("./sponsors");
+var _sponsors = require("./sponsors");
+
+function isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _construct(Parent, args, Class) { if (isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
@@ -35,35 +27,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var MakeBusiness =
 /*#__PURE__*/
 function () {
-  function MakeBusiness(owner, director, money, employersNames) {
+  function MakeBusiness(owner) {
+    var director = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'Victor';
+    var money = arguments.length > 2 ? arguments[2] : undefined;
+    var employersNames = arguments.length > 3 ? arguments[3] : undefined;
+
     _classCallCheck(this, MakeBusiness);
 
     this.owner = owner;
-    this.director = director || 'Victor';
+    this.director = director;
     this.money = money;
     this.employersNames = employersNames;
   }
 
   _createClass(MakeBusiness, [{
-    key: "sumSponsors",
-    value: function sumSponsors() {
-      var _console;
-
-      var _sponsors = sponsors,
-          eu = _sponsors.eu,
-          rus = _sponsors.rus;
-      var sumSponsors = [].concat(_toConsumableArray(eu), _toConsumableArray(rus), ['unexpected sponsor']);
-      console.log("We have a business. Owner: ".concat(this.owner, " , director: ").concat(this.director, ". Our budget: ").concat(this.money, ". And our employers:\n    ").concat(this.employersNames));
-      console.log('And we have a sponsors: ');
-
-      (_console = console).log.apply(_console, _toConsumableArray(sumSponsors));
-
-      console.log('Note. Be careful with ' + sponsors.eu[0] + ". It's a huge risk.");
+    key: "showInfo",
+    value: function showInfo() {
+      console.log("We have a business. Owner: ".concat(this.owner, ", director: ").concat(this.director, ". Our budget: ").concat(this.cash, ". And our employers: ").concat(this.emp));
+      console.log('And we have sponsors: ');
+      console.log([].concat(_toConsumableArray(_sponsors.eu), _toConsumableArray(_sponsors.rus), ['unexpected sponsor']).join(', '));
+      console.log("Note. Be careful with ".concat(_sponsors.srl, ". It's a huge risk."));
     }
   }]);
 
   return MakeBusiness;
 }();
 
-var make = new MakeBusiness();
-make.sumSponsors.apply(make, ['Sam', null, _sponsors2.money, _employers.employersNames]);
+var make = _construct(MakeBusiness, ['Sam', null, _sponsors.money, _employers.employersNames]);
+
+make.showInfo();
